@@ -13,12 +13,17 @@ public class Task1 {
         if(number <= 0){
             throw new InvalidNumberException("Число меньше или равно нулю");
         }
-        System.out.println("Число корректно");
+        System.out.println("Число " + number +  " корректно");
         return number;
     }
 
-    public static void main(String[] args) throws InvalidNumberException {
-        setNumber(new Scanner(System.in));
+    public static void main(String[] args)  {
+        try {
+            setNumber(new Scanner(System.in));
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 }
 
